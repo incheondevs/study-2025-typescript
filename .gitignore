@@ -1,2 +1,4 @@
 .vscode/
+.idea/
+oscar/.idea/
 node_modules/
