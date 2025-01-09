@@ -268,7 +268,22 @@ Person.prototype.sayHello = function() {
     ```
 
 
-### 🌳 실행문과 표현식문 용어 정리
+### 🌳 용어 정리
+
+꽤 오래 전부터 프로그래밍 언어는 실행문 지향 언어와 표현식 지향 언어로 구분되어 왔다.
+
+- 실행문 지향 언어: C
+- 표현식 지향 언어: Scala
+
+- **실행문(Statement)**: 독립적으로 동작을 수행하며 값을 반환하지 않는다.
+- **복합실행문(Compound Statement)**: 여러 실행문을 중괄호로 묶어서 하나의 실행문으로 만드는 문법적 요소
+- **표현식(Expression)**: 값으로 평가될 수 있는 코드 조각
+- **표현식문(Expression Statement)**: 표현식으로 이루어진 문장
+- **다중 프로그래밍 언어(Multi-paradigm Language)**: 실행문과 표현식을 모두 지원하는 프로그래밍 언어
+- **표현식 지향 언어(Expression-oriented Language)**: 표현식을 중심으로 프로그래밍하는 언어
+- **실행문 지향 언어(Statement-oriented Language)**: 실행문을 중심으로 프로그래밍하는 언어
+
+### 🌳 표현식문이란?
 
 ```typescript
 let x
@@ -292,30 +307,15 @@ if(return x > 0)
 
 즉 똑같이 CPU 에서 실행되는 구문이더라도 x > 0 처럼 return 키워드 없이 결괏값을 반환하는 실행문이 필요하다.
 
-이를 표현식문 이라고 구분해서 부른다.
+이를 표현식문(expression statement) 이라고 구분해서 부른다.
 
 > 실행문 지향 언어들은 if 문을 if 실행문 이라고 표현한다. 반면에 표현식 지향 언어들은 if 표현식이라고 표현한다.
-> 
+>
 > if 표현식은 값을 반환하므로 실행문 지향 언어에서는 불가능한 다음과 같은 구문을 작성할 수 있게 됐다.
 
 ```typescript
 val x = if(a > b) a else b
 ```
-
-### 🌳 용어 정리
-
-꽤 오래 전부터 프로그래밍 언어는 실행문 지향 언어와 표현식 지향 언어로 구분되어 왔다.
-
-- 실행문 지향 언어: C
-- 표현식 지향 언어: Scala
-
-- **실행문(Statement)**: 독립적으로 동작을 수행하며 값을 반환하지 않는다.
-- **복합실행문(Compound Statement)**: 여러 실행문을 중괄호로 묶어서 하나의 실행문으로 만드는 문법적 요소
-- **표현식(Expression)**: 값으로 평가될 수 있는 코드 조각
-- **표현식문(Expression Statement)**: 표현식으로 이루어진 문장
-- **다중 프로그래밍 언어(Multi-paradigm Language)**: 실행문과 표현식을 모두 지원하는 프로그래밍 언어
-- **표현식 지향 언어(Expression-oriented Language)**: 표현식을 중심으로 프로그래밍하는 언어
-- **실행문 지향 언어(Statement-oriented Language)**: 실행문을 중심으로 프로그래밍하는 언어
 
 ##### 실행문(Statement)의 종류
 
@@ -437,46 +437,16 @@ function f() {
 ```typescript
 function f() { let x = 1 }
 function g() { let x = 2 }
+
+function i() { f().x = 10 } // 에러
 ```
 
-[//]: # (본문에서 말하고자 하는 의도를 조금 더 파악해보자.)
-
-[//]: # ()
-[//]: # (```typescript)
-
-[//]: # (if &#40;a > b&#41; {)
-
-[//]: # (  console.log&#40;'a is greater than b'&#41;;)
-
-[//]: # (})
-
-[//]: # (```)
-
-[//]: # ()
-[//]: # (이 코드는 코드 자체로 실행 할 수 없다. 왜냐하면 실행문이 아니기 때문이다.)
-
-[//]: # ()
-[//]: # (이 코드는 `표현식` 이다.)
-
-[//]: # ()
-[//]: # (이 코드를 실행하려면, 외부에서 이 코드를 포함하고 있는 `함수` 또는 `스크립트`를 실행해야 한다.)
-
-[//]: # ()
-[//]: # (다시 말하면, 코드 그 자체가 실행문이 아니란 소리.)
-
-[//]: # ()
-[//]: # (하지만 표현식문&#40;Expression Statement&#41;은 이와는 다르다. 위에 정리한 바와 같이, `표현식` 과 `실행문` 을 합쳐놔서 그 자체로 실행 가능한 코드 조각이 될 수 있다.)
-
-[//]: # ()
-[//]: # (```typescript)
-
-[//]: # (const isGreater = &#40;a: number, b: number&#41;: boolean => a > b;)
-
-[//]: # (```)
 
 ##### 실행문을 만드는 세미콜론
 
-C 언어는 모든 문장이 반드시 세미콜론 ; 으로 끝나야 한다. C 언어 구문을 참조해 만든 ES5 자바스크립트 또한 모든 문장 끝에 세미콜론이 있어야 한다.
+C 언어는 모든 문장이 반드시 세미콜론 ; 으로 끝나야 한다. 
+
+C 언어 구문을 참조해 만든 ES5 자바스크립트 또한 모든 문장 끝에 세미콜론이 있어야 한다.
 
 하지만 ESNext 자바스크립트와 타입스크립트에서는 세미콜론을 생략할 수 있다.
 
@@ -487,7 +457,9 @@ C 언어는 모든 문장이 반드시 세미콜론 ; 으로 끝나야 한다. C
 > 오해의 소지가 있는 타이틀: '세미콜론이 실행문을 만든다'
 >
 > 실행문을 만드는 세미콜론이라는 타이틀은 다소 오해의 소지가 있을 수 있겠는데요.
+>
 > C 언어에서는 세미콜론을 붙이지 않으면 컴파일 에러가 발생합니다. 또한 C 컴파일러가 세미콜론을 중심으로 문장을 끝을 해석하기 위해 필요한 구문적 요소이기 때문입니다.
+> 
 > 따라서, 세미콜론이 '실행문을 만든다' 라는 구문은 잘못되지 않았나 싶습니다.
 >
 > 또한 타입스크립트에서나 자바스크립트에서 세미콜론을 붙이지 않아도 되는 이유는, 자바스크립트 엔진이 세미콜론을 자동으로 붙여주기 때문(ASI) 입니다.
@@ -548,13 +520,13 @@ let add = (x: number, y: number) => x + y;
 
 이를테면, `1 + 2` 는 표현식이다. `1` 과 `2` 는 리터럴이고, `+` 는 연산자라고 할 수 있다.
 
-**표현식은 항상 컴파일러에 의해 계산법이 적용되어 어떤 값이 된다**
+**표현식은 항상 컴파일러(인터프리터)에 의해 실행시점에 계산법이 적용되어 어떤 값이 된다**
 
 예를 들면, `1 + 2` 는 `3` 이 되고, `true && false` 는 `false` 가 된다.
 
 ##### 🌝 그렇다면 함수 표현식은 무엇일까?
 
-변수 f 에 함수를 할당하는 것을 의미한다.
+변수 f 에는 `function(x: number, y: number): number { return x + y; }` 를 마치 **값** 처럼 대입하는데, 이것이 함수 표현식이다.
 
 ```typescript
 let f = function(x: number, y: number): number {
@@ -575,6 +547,7 @@ let f = function(x: number, y: number): number {
 > 함수의 타입 정의(Type Definition) 과 실제 평가(Real Evaluation) 은 다른 개념 입니다.
 >
 > 함수의 선언 시점에 타입을 매핑하더라도 실제 호출이 이루어지지 않는 한 실제 값은 알 수 없습니다.
+> 
 > 따라서 실제 호출이 이루어지는 시점까지는 함수의 실제 값을 미리 추론할 수 없기 때문에 Lazy Evaluation 을 적용하는 것 입니다.
 
 
@@ -587,7 +560,9 @@ let f = function(x: number, y: number): number {
 이때, 함수는 실행 호출문을 이용하여 실행되며, 위 예제의 값은 `f(1, 2)` 를 통해 `3` 이 되는 것이다.
 
 
-### 🌳 즉시 실행 함수(IIFE)를 통해 분석해보기
+### 🌳 일반 함수를 통해 분석해보기
+
+> 본 서적에서는 익명 함수로 표현하였지만, 해당 함수는 IIFE 함수인 것으로 보이며, 설명을 위해 일반 함수로 치환함.
 
 ```typescript
 let f = function(x: number, y: number): number {
@@ -1028,7 +1003,7 @@ const multiply = (a: number, b: number = 2): number => a * b;
 다음 코드에서 3행의 makePerson 함수는 호출 때 매개변수 age 에 해당하는 값을 전달받지 못하면 기본으로 10이 설정된다.
 
 ```typescript
-export type PErson = { name: string, age: number };
+export type Person = { name: string, age: number };
 
 export const makePerson = (name: string, age: number = 10): PErson => {
   const person = { name: name, age: age };
@@ -1098,10 +1073,12 @@ printPerson({ name: 'Jack', age: 10 });
 const makeObject = (key, value) => ({ [key]: value });
 ```
 
-이 코드는 다음처럼 객체의 속성 이름을 변수로 만들려고 할 때 사용한다. 즉 [key] 부분이 'name' 이면 { name: value } 형태, firstName 이면 { firstName: value } 형태의 객체를 생성한다.
+이 코드는 다음처럼 객체의 속성 이름을 변수로 만들려고 할 때 사용한다.
+
+즉 [key] 부분이 'name' 이면 { name: value } 형태, firstName 이면 { firstName: value } 형태의 객체를 생성한다.
 
 ```typescript
-const makeObject = (key, value) => ({[key]: value});
+const makeObject = (key, value) => ({ [key]: value });
 console.log(makeObject('name', 'Jack'));
 console.log(makeObject('firstName', 'Jane'));
 ```
@@ -1134,13 +1111,18 @@ console.log(makeObject('firstName', 'Jane'));
 
 ##### 메서드란?
 
-타입스크립트에서 메서드는 function 으로 만든 함수 표현식을 담고 있는 속성이다. 다음 코드에서 클래스 A 는 value, method 라는 두 개의 속성을 가진다. value 에는 1이라는 값을 설정하지만 method 는 () => void 타입의 함수 표현식을 설정합니다.
+타입스크립트에서 메서드는 function 으로 만든 함수 표현식을 담고 있는 속성이다. 
+
+다음 코드에서 클래스 A 는 value, method 라는 두 개의 속성을 가진다.
+
+value 에는 1이라는 값을 설정하지만 method 는 () => void 타입의 함수 표현식을 설정합니다.
 
 여기서 method 구현 내용 중 특이한 부분은 4행의 this.value 부분이다.
 
 ```typescript
 export class A {
   value: number = 1;
+  
   method(): void {
     console.log(`value is ${this.value}`);
   }
@@ -1149,7 +1131,9 @@ export class A {
 
 ##### 클래스 메서드 구문
 
-앞에서 작성한 클래스 A 는 구현하기도 번거롭고 가독성도 떨어집니다. 타입스크립트 클래스 속성 중 함수 표현식을 담는 속성은 function 키워드를 생략할 수 있게 하는 단축 구문을 제공한다.
+앞에서 작성한 클래스 A 는 구현하기도 번거롭고 가독성도 떨어집니다. 
+
+타입스크립트 클래스 속성 중 함수 표현식을 담는 속성은 function 키워드를 생략할 수 있게 하는 단축 구문을 제공한다.
 
 다음 코드에서 B 클래스는 타입스크립트답게 구현한 클래스 A 이다. A 와 B 는 똑같이 동작하지만 B 코드가 더 간결해 보인다.
 
@@ -1162,6 +1146,10 @@ export class B {
   }
 }
 ```
+
+> 🌀 음? 내가 보기엔 A 가 더 가독성이 좋은 것 같은데?
+> 
+> B 클래스처럼 생성자에 넣기보다는 생성자로 받아주는 필드가 아니라면 상수로 필드를 선언하는 것이 더 좋지 않나?
 
 ##### 정적 메서드
 
@@ -1192,10 +1180,15 @@ console.log(D.whoAreYou());
 
 
 ##### 메서드 체인
-제이 쿼리와 같은 라이브러리는 다음처럼 객체의 메서드를 이어서 계속 호출하는 방식의 코드를 작성할 수 있다. 이러한 방식을 메서드 체인이라고 한다.
+제이 쿼리와 같은 라이브러리는 다음처럼 객체의 메서드를 이어서 계속 호출하는 방식의 코드를 작성할 수 있다.
 
-```typescript
-$("#p1").css("color", "red").slideUp(2000).slideDown(2000);
+**이러한 방식을 메서드 체인이라고 한다.**
+
+```text
+$("#p1")
+        .css("color", "red")
+        .slideUp(2000)
+        .slideDown(2000);
 ```
 
 타입스크립트로 메서드 체인을 구현하려면 메서드가 항상 this 를 반환하게 한다.
@@ -1203,10 +1196,12 @@ $("#p1").css("color", "red").slideUp(2000).slideDown(2000);
 ```typescript
 export class Calculator {
   constructor(public value: number = 0) {}
+  
   add(value: number) {
     this.value += value;
     return this;
   }
+  
   multiply(value: number) {
     this.value *= value;
     return this;
@@ -1219,7 +1214,14 @@ export class Calculator {
 ```typescript
 import { Calculator } from './calculator';
 
-const calc = new Calculator;
+const calc = new Calculator();
 const result = calc.add(1).multiply(2).value;
 console.log(result); // 2
+```
+
+다만 위 화살표 함수에서처럼 메서드도 이렇게 사용할 경우 this 바인딩이 끊어질 수 있다.
+
+```typescript
+const add = calc.add;
+add(2);
 ```
