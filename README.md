@@ -21,8 +21,8 @@ https://sbjang.notion.site/for-React-js-RN-168e55aa362f8050b048e36a9c27ffa0
 | ./sbjang | [장*빈](https://github.com/denlyou) |
 | ./? | 황*준 |
 | ./? | 현*연 |
-| ./? | 이*웅 |
-| ./? | 윤*기 |
+| ./kwlee | [이*웅](https://github.com/lkwoung88) |
+| ./oscar | [윤*기](https://github.com/Jeffr-K) |
 | ./? | 조*혁 |
 | ./? | 이*철 |
 
