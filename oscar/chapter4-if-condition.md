@@ -104,10 +104,12 @@ let a = loop {
     }
 }
 
+// 하지만 애네는 실행문으로만 사용할 수 있음.
 let a = while b > 0 {
     break 1;
 }
 
+// 하지만 애네는 실행문으로만 사용할 수 있음.
 let a = for i in 0..10 {
     if i == b {
         break 1;
