@@ -19,7 +19,7 @@ https://sbjang.notion.site/for-React-js-RN-168e55aa362f8050b048e36a9c27ffa0
 | 경로| 담당자
 | :----: | :---------------------------------------------: |
 | ./sbjang | [장*빈](https://github.com/denlyou) |
-| ./? | 황*준 |
+| ./hyunjun | [황*준](https://github.com/nonamedeveloperrr) |
 | ./soosoo | [현*연](https://github.com/soosoo22) |
 | ./kwlee | [이*웅](https://github.com/lkwoung88) |
 | ./oscar | [윤*기](https://github.com/Jeffr-K) |
