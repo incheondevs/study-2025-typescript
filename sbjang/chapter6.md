@@ -72,6 +72,12 @@ class StrIerable implements Iterable<string> {
 }
 ```
 
+### 보충 자료
+
+![첨부이미지](https://poiemaweb.com/img/iteration-protocol-interface.png)
+
+출처 : https://poiemaweb.com/es6-iteration-for-of
+
 <br/>
 
 ## 6-2. Generator(생성기) 이해하기
