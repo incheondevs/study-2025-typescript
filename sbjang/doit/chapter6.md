@@ -39,7 +39,7 @@ Iterator(반복기)를 사용하려면 사용하려는 대상 객체에 `[Symbol
 
 ### Iterable<T>와 Iterator<T> 인터페이스
 
-타입스크립트의 terable 객체에는 위 두가지 인터페이스를 사용 가능
+타입스크립트의 iterable 객체에는 위 두가지 인터페이스를 사용 가능
 
 ```ts
 class 반복기제공객체 implements Iterable<타입T> {
@@ -103,9 +103,8 @@ for(let val of generator())
 
 세미 코루틴 : 단일 스레드로 동작하는 언어가 멀티 스레드로 동작하는것 처럼 보이는 기능
 
-// TODO : 보완하기
+| JS에서는 코루틴을 제공하지 앟음 => async/await를 이용
 
-| (MEMO) 세미 코루틴과 코루틴의 차이
 
 ### function* 키워드
 
