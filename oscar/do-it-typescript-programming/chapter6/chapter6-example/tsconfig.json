@@ -5,7 +5,7 @@
     "target": "es5",
     "moduleResolution": "node",
     "outDir": "dist",
-    "baseUrl": ".",
+    "baseUrl": "./",
     "sourceMap": true,
     "downlevelIteration":  true, // TODO: 예제에서 문제 없이 실행하려면 필요함
     "paths": { "*":  ["node_modules/*"] }
