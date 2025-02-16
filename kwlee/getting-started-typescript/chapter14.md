@@ -62,7 +62,7 @@ interface Developer {
 	industry: 'tech';
 }
 
-function greet(someone: Person - Developer) {
+function greet(someone: Person | Developer) {
 	if (someone.industry === 'common') {
 		// someone의 타입은 Person 타입으로 추론된다，
 	}
