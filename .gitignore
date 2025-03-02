@@ -1,4 +1,7 @@
 .vscode/
 .idea/
-oscar/.idea/
 node_modules/
+
+# Oscar(윤정기)
+oscar/.idea/
+oscar/do-it-typescript-programming/chapter6/chapter6-example/node_modules/
